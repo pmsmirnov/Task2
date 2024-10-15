@@ -25,6 +25,9 @@ public class Main {
         for (User user: userService.getAllUsers())
             System.out.println(user);
         userService.removeUserById(30);
+        userService.removeUserById(3);
+        for (User user: userService.getAllUsers())
+            System.out.println(user);
         userService.cleanUsersTable();
         userService.dropUsersTable();
     }

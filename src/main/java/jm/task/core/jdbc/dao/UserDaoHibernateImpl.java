@@ -25,8 +25,6 @@ public class UserDaoHibernateImpl implements UserDao {
                         lastName VARCHAR(50) NOT NULL,
                         age      TINYINT     NOT NULL
                 );""";
-
-        //session.createSQLQuery(sql).executeUpdate();
         session.createSQLQuery(sql).executeUpdate();
         transaction.commit();
         session.close();
