@@ -11,20 +11,20 @@ import java.sql.Statement;
 
 public class Main {
     public static void main(String[] args) {
-        // СЂРµР°Р»РёР·СѓР№С‚Рµ Р°Р»РіРѕСЂРёС‚Рј Р·РґРµСЃСЊ
+        // реализуйте алгоритм здесь
         final UserService userService = new UserServiceImpl();
         userService.createUsersTable();
         User user1 = new User("Pavel", "Smirnov", (byte) 40);
-        User user2 = new User("Pavel", "Smirnov", (byte) 40);
-        User user3 = new User("Pavel", "Smirnov", (byte) 40);
-        User user4 = new User("Pavel", "Smirnov", (byte) 40);
+        User user2 = new User("Федор", "Федоров", (byte) 40);
+        User user3 = new User("Александр", "Александров", (byte) 40);
+        User user4 = new User("Петр", "Петров", (byte) 40);
         userService.saveUser(user1.getName(), user1.getLastName(), user1.getAge());
         userService.saveUser(user2.getName(), user2.getLastName(), user2.getAge());
         userService.saveUser(user3.getName(), user3.getLastName(), user3.getAge());
         userService.saveUser(user4.getName(), user4.getLastName(), user4.getAge());
         for (User user: userService.getAllUsers())
             System.out.println(user);
-        userService.removeUserById(3);
+        userService.removeUserById(30);
         userService.cleanUsersTable();
         userService.dropUsersTable();
     }

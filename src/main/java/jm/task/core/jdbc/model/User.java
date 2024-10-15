@@ -1,21 +1,24 @@
 package jm.task.core.jdbc.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.DynamicUpdate;
 
-@Table
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Users")
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
-    @Column
+    @Column(name = "name", length = 20)
     private String name;
 
-    @Column
+    @Column(name = "lastName", length = 20)
     private String lastName;
 
-    @Column
+    @Column(name = "age")
     private Byte age;
 
     public User() {
@@ -61,6 +64,6 @@ public class User {
     }
 
     public String toString() {
-        return "[" + this.name + ", " + this.lastName + ", " + this.age + "]";
+        return "[" + this.id + ", " + this.name + ", " + this.lastName + ", " + this.age + "]";
     }
 }
